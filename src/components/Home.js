@@ -4,6 +4,8 @@ import Contact, { MagneticButton } from "./Contact";
 import Typewriter from "typewriter-effect";
 import "./home.css";
 import Project from "./Project";
+import { RightArrow } from "../accets/icons/Icon";
+import classNames from "classnames";
 
 function Home() {
   const img1Ref = useRef(null);
@@ -12,6 +14,7 @@ function Home() {
   const navbarRef = useRef(null);
   const [sticky, setSticky] = useState("");
   const colors = ["red", "green", "blue", "orange", "purple"];
+  const [respNavbar, setRespNavbar] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,22 +25,82 @@ function Home() {
       }
       if (val > 500) setSticky("sticky");
       else setSticky("");
-      console.log(val);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const myractive = classNames("mobile-menu", {
+    open: respNavbar,
+  });
+
+  const displayMobileNavLinks = classNames("mobile-nav-wrapper", {
+    open: respNavbar,
+  });
+
   return (
     <div>
       <header className={`head-container ${sticky}`} ref={navbarRef}>
         <div className="nav-box">
-          <nav className="nav-left">
+          <nav className="nav-left navigation-links">
             <a href="#" className="logo">
               <img src={require("../accets/img/logo.png")} alt="" />
             </a>
+            <div
+              aria-label="Toggle Mobile Menu Button"
+              className={`right-logo ${myractive} `}
+              onClick={() => setRespNavbar(!respNavbar)}
+            >
+              <div className="bar-one" />
+              <div className="bar-two" />
+              <div className="bar-three" />
+            </div>
           </nav>
-          <nav className="nav-right">
+
+          <nav
+            arai-label="mobile navigation"
+            className={`desktop ${displayMobileNavLinks}`}
+          >
+            <Link
+              activeClass="myactive"
+              to="Home"
+              smooth={true}
+              spy={true}
+              duration={2000}
+            >
+              Home
+            </Link>
+            <Link
+              activeClass="myactive"
+              to="project"
+              smooth={true}
+              spy={true}
+              duration={2000}
+            >
+              Project
+            </Link>
+            <Link
+              activeClass="myactive"
+              to="content"
+              smooth={true}
+              spy={true}
+              duration={2000}
+              offset={-180}
+            >
+              About Me
+            </Link>
+            <Link
+              activeClass="myactive"
+              to="cont"
+              smooth={true}
+              spy={true}
+              duration={2000}
+            >
+              Contacts
+            </Link>
+          </nav>
+
+          <nav className="nav-right resp">
             <MagneticButton
               className="nav-link button "
               scale={2}
@@ -82,7 +145,7 @@ function Home() {
             >
               <Link
                 activeClass="myactive"
-                to="contact"
+                to="content"
                 smooth={true}
                 spy={true}
                 duration={2000}
@@ -236,8 +299,8 @@ function Home() {
           work with you.
         </span>
       </div>
-      {/* <Project /> */}
-      {/* <Contact /> */}
+      <Project />
+      <Contact />
     </div>
   );
 }

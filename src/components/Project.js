@@ -136,8 +136,30 @@ function Project() {
         </div>
 
         <div
-          className="project-container"
+          className="project-container resp"
           data-aos="fade-left"
+          // data-aos-anchor-placement="right-left"
+          data-aos-delay="400"
+          data-aos-duration="1000"
+          data-aos-offset="300"
+        >
+          <p href="#">
+            <img src={require("../accets/img/Developerlogo.png")} alt="" />
+          </p>
+          <div className="project-text">
+            <p href="#" className="project-heading ">
+              <h2>Cleared JEE Advance</h2>
+            </p>
+            <p className="des-project">
+              I have successfully cleared one of India's most challenging exams
+              JEE Advance, establishing myself as one of the top 1% of students
+              in the country in that exam.
+            </p>
+          </div>
+        </div>
+        <div
+          className="project-container desktop"
+          data-aos="fade-right"
           // data-aos-anchor-placement="right-left"
           data-aos-delay="400"
           data-aos-duration="1000"

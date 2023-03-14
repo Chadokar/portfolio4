@@ -81,3 +81,23 @@
   font-size: 18px;
   padding-bottom: 10px;
 }
+
+@media (max-width: 400px) {
+  .contacts {
+    padding: 20px;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .button-1 {
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .contact-icon {
+    gap: 8px;
+    width: 100%;
+    justify-content: space-between;
+  }
+}

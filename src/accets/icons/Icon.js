@@ -17,6 +17,32 @@ export const Facebook = ({ color = "#101828", ...props }) => {
     </svg>
   );
 };
+export const RightArrow = ({
+  color = "#101828",
+  width = 20,
+  height = 20,
+  className = "",
+  ...props
+}) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path
+        d="M5 12H19M19 12L12 5M19 12L12 19"
+        stroke={color}
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
 export const Mail = ({
   color = "#101828",
   width = 20,

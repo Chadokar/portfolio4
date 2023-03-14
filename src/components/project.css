@@ -57,3 +57,9 @@
 .achievement {
   margin-top: 180px;
 }
+
+@media (max-width: 900px) {
+  .project-box {
+    flex-direction: column;
+  }
+}

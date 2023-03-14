@@ -24,6 +24,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media (max-width: 1024px) {
+  div .resp {
+    display: none;
+    transition: 0.5s;
+  }
+}
+
+div .resphide {
+  visibility: hidden;
+}
+
+@media (min-width: 1024px) {
+  div .desktop {
+    display: none;
+  }
+}
+
 a,
 button,
 input,
